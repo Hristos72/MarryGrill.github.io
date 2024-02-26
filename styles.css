@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Anta&family=Inter:wght@100..900&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Anta', sans-serif;
+    overflow: auto;
+}
+
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background: linear-gradient(-45deg, #0000FF, #000, #FF0000);
+    background-size: 400% 400%;
+    animation: gradientAnimation 60s linear infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.glass-effect {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 100%;
+    transition: all 0.5s;
+    padding: 20px;
+    font-family: 'Anta', sans-serif;
+}
+
+.logo-text {
+    font-size: 4vw;
+    font-weight: 700;
+    color: transparent;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 15px;
+    transition: all 0.5s;
+    user-select: none;
+    font-family: 'Anta', sans-serif;
+}
+
+.logo-text span {
+    background: linear-gradient(135deg, #FFA500, #FF4500);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.slogan {
+    font-size: 1.5vw;
+    font-weight: 600;
+    color: white;
+    margin-top: 5px;
+    user-select: none;
+    font-family: 'Anta', sans-serif;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    padding: 1rem;
+    grid-template-rows: repeat(4, 1fr);
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    max-width: 800px;
+    user-select: none;
+    font-family: 'Anta', sans-serif;
+}
+
+.grid-item {
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-family: 'Anta', 'Roboto Slab', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5vw;
+    color: #F97B22;
+    border-radius: 10px;
+    width: calc(18vw - 5px);
+    height: calc(18vw - 5px);
+    margin: 10px;
+    transition: transform 1s, box-shadow 1s,background 1s;
+    user-select: none;
+}
+
+.grid-item:hover {
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
+    transition: transform 1s, box-shadow 1s, background 1s;
+}
+
+.grid-item:hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(30, 172, 214, 0.36), rgba(206, 225, 231, 0.2));
+    border-radius: 10px;
+    pointer-events: none;
+    z-index: -1;
+    transition: opacity 1s, background 1s;
+    opacity: 0;
+}
+
+
+.grid-item:hover:hover::before {
+    opacity: 1;
+}
+
