@@ -216,3 +216,28 @@ function getNeighbors(index) {
 
     return neighbors;
 }
+
+window.addEventListener('scroll', function() {
+    var logo = document.getElementById('logo');
+    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    var logoTop = 50; // Adjust the initial position of the logo
+
+    if (scrollTop > logoTop) {
+        logo.style.top = (scrollTop - logoTop) + 'px';
+    } else {
+        logo.style.top = '50px';
+    }
+});
+
+window.addEventListener('scroll', function() {
+    var logo = document.querySelector('.logo_middle_page');
+    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    var logoTop = 20; // Adjust the initial position of the logo
+    var headerHeight = document.querySelector('.header').offsetHeight;
+
+    if (scrollTop > logoTop) {
+        logo.classList.add('scrolling-up');
+    } else {
+        logo.classList.remove('scrolling-up');
+    }
+});

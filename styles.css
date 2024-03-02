@@ -14,8 +14,8 @@ body {
     width: 100vw;
     height: 100vh;
     z-index: -1;
-    background: linear-gradient(-45deg, #0000FF, #000, #FF0000);
-    background-size: 400% 400%;
+    background: linear-gradient(-45deg, #ff0000, #000, #0000ff);
+    background-size: 800% 800%;
     animation: gradientAnimation 60s linear infinite;
 }
 
@@ -38,7 +38,19 @@ body {
     min-height: 100vh;
 }
 
+.logo_middle_page {
+    position: absolute;
+    top: 20px; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2; /* Ensure the logo is on top of the glass effect */
+    width: 200px; /* Adjust the width as needed */
+    height: auto; /* Automatically adjust the height based on the width */
+}
+
 .glass-effect {
+    position: relative; /* Ensure the glass effect is positioned relative to its container */
+    z-index: 0;
     background: rgba(255, 255, 255, 0.2);
     border-radius: 20px;
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
@@ -129,8 +141,6 @@ body {
     opacity: 0;
 }
 
-
 .grid-item:hover:hover::before {
     opacity: 1;
 }
-
